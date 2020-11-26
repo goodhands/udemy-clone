@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 const Nav = () => {
+    // const [categories, showCategories] = useEffect("");
     return (
         <nav className="bg-white border-b-2 border-gray-200 flex flex-row h-16 items-center space-x-4 py-9 px-5 shadow-sm">
             <a href="/" className="logo bg-contain bg-no-repeat h-8 logo w-28"></a>
@@ -15,7 +16,9 @@ const Nav = () => {
                 <a href="" className="nav-menu">Udemy for Business</a>
                 <a href="" className="nav-menu">Teach on Udemy</a>
                 <a href="" className="nav-menu">
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
                 </a>
             </div>
             <div className="buttons flex justify-end space-x-3 w-2/12">
