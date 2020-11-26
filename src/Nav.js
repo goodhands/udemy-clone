@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 const Nav = () => {
     // const [categories, showCategories] = useEffect("");
@@ -6,7 +6,7 @@ const Nav = () => {
         <nav className="bg-white border-b-2 border-gray-200 flex flex-row h-16 items-center space-x-4 py-9 px-5 shadow-sm">
             <a href="/" className="logo bg-contain bg-no-repeat h-8 logo w-28"></a>
             <div className="flex flex-row items-center justify-between menu w-10/12">
-                <a href="#" className="nav-menu" onMouseEnter={e => showDropdown()}>Categories</a>
+                <a href="#" className="nav-menu">Categories</a>
                 <input 
                     type="text"
                     className="bg-gray border border-gray-400 h-12 outline-none px-5 rounded-full w-6/12"
