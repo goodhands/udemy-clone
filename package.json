@@ -1,0 +1,29 @@
+{
+  "name": "pureflix",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel src/index.html",
+    "build": "parcel build ./src/index.html",
+    "format": "prettier \"src/**/*.{js,html}\" --write",
+    "lint": "eslint \"src/**/*.{js, jsx}\" --quiet",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.0.2",
+    "eslint": "^7.14.0",
+    "parcel": "^2.0.0-nightly.462",
+    "postcss": "^8.1.10",
+    "postcss-modules": "^3.2.2",
+    "prettier": "^2.2.0",
+    "tailwindcss": "^2.0.1"
+  },
+  "dependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  }
+}
