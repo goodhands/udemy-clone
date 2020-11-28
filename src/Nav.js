@@ -1,19 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
+import useMenu from './hooks/useMenu';
+import Categories from './components/menu/Categories';
 
 const Nav = () => {
-    // const [categories, showCategories] = useEffect("");
+    const [categoryState, CategoriesMenu, setCategoryMenu] = useMenu("Categories", false);
+    // const [businessState, BusinessMenu, setBusinessMenu] = useMenu("Udemy for Business", false);
+
     return (
-        <nav className="bg-white border-b-2 border-gray-200 flex flex-row h-16 items-center space-x-4 py-9 px-5 shadow-sm">
+        <nav className="bg-white border-b-2 border-gray-200 flex flex-row h-16 items-center space-x-4 px-5 shadow-sm">
             <a href="/" className="logo bg-contain bg-no-repeat h-8 logo w-28"></a>
-            <div className="flex flex-row items-center justify-between menu w-10/12">
-                <a href="#" className="nav-menu">Categories</a>
+            <div className="flex flex-row items-center justify-between menu w-10/12 h-full">
+                <CategoriesMenu>
+                    <Categories/>
+                </CategoriesMenu>
+
                 <input 
                     type="text"
                     className="bg-gray border border-gray-400 h-12 outline-none px-5 rounded-full w-6/12"
                     placeholder="Search for anything"
                     //TODO: Add magnifier image
                 />
-                <a href="" className="nav-menu">Udemy for Business</a>
+                {/* <BusinessMenu/> */}
                 <a href="" className="nav-menu">Teach on Udemy</a>
                 <a href="" className="nav-menu">
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
