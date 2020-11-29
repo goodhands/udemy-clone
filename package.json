@@ -15,6 +15,7 @@
   "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^10.0.2",
+    "axios": "^0.21.0",
     "eslint": "^7.14.0",
     "parcel": "^2.0.0-nightly.462",
     "postcss": "^8.1.10",
