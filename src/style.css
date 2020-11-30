@@ -4,6 +4,10 @@
 
 @tailwind utilities;
 
+body{
+    font-family: sf pro text,-apple-system,BlinkMacSystemFont,Roboto,segoe ui,Helvetica,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol;
+}
+
 .logo{
     background-image: url('./assets/logo-coral.svg');
 }
@@ -13,7 +17,11 @@
 }
 
 .child-menu{
-    @apply bg-white border border-gray-200 p-3 shadow w-56;
+    @apply bg-white border border-gray-200 shadow w-64 h-full;
+}
+
+.child-menu ul{
+    @apply flex flex-col w-full;
 }
 
 .btn{

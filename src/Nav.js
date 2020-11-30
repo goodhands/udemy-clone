@@ -3,9 +3,6 @@ import useMenu from './hooks/useMenu';
 import Categories from './components/menu/Categories';
 
 const Nav = () => {
-    // const [categoryState, CategoriesMenu, setCategoryMenu] = useMenu("Categories", false);
-    // const [businessState, BusinessMenu, setBusinessMenu] = useMenu("Udemy for Business", false);
-
     return (
         <nav className="bg-white border-b-2 border-gray-200 flex flex-row h-16 items-center space-x-4 px-5 shadow-sm">
             <a href="/" className="logo bg-contain bg-no-repeat h-8 logo w-28"></a>
@@ -13,9 +10,9 @@ const Nav = () => {
 
                 <Categories/>
 
-                <input 
+                <input
                     type="text"
-                    className="bg-gray border border-gray-400 h-12 outline-none px-5 rounded-full w-6/12"
+                    className={`bg-gray border border-gray-400 h-12 outline-none px-5 rounded-full w-6/12`}
                     placeholder="Search for anything"
                     //TODO: Add magnifier image
                 />

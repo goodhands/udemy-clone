@@ -9,6 +9,7 @@ module.exports = {
       },
       textColor:{
         primary: '#0F7C90',
+        neutral: '#3c3b37',
       },
       borderColor: {
         primary: '#2896a9'

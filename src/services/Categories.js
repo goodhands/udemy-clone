@@ -1,9 +1,13 @@
 import axios from '../axios';
 
-const CategoriesService = {
+const CategoryProvider = {
     all(){
-        return axios.get('/course-categories')
+        return axios.get('/course-categories');
+    },
+
+    findChildren(parentId){
+        return axios.get(`/course-categories/${parentId}/subcategories`);
     }
 }
 
-export default CategoriesService;
+export default CategoryProvider;

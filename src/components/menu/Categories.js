@@ -1,13 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import CategoriesService from '../../services/Categories'; 
-import SubCategories from './SubCategories';
+import CategoryProvider from '../../services/Categories'; 
+import SubCategory from './SubCategories';
 
 const Categories = () => {
 
-    const [state, setState] = useState(false);
+    const [showCategory, toggleCategory] = useState(false);
     const [categories, setCategories] = useState([]);
     const [showSubCategory, setShowSubCategory] = useState(false);
+    const [subCategoryParent, setSubCategoryParent] = useState([]);
 
+    /**
+     * Thinking whether to load on categories after component
+     * renders instead of each onMouseEnter event
+     */
     // useEffect( () => {
     //     setCategories([]);
 
@@ -18,7 +23,9 @@ const Categories = () => {
     // }, [setCategories, categories]);
 
     async function all(){
-        CategoriesService.all().then(({ data }) => {
+        if(categories.length > 0 ) return;
+
+        CategoryProvider.all().then(({ data }) => {
             setCategories(() => data.results || []);
         }, console.error);
     } 
@@ -27,10 +34,13 @@ const Categories = () => {
         <nav 
             className="flex h-full items-center relative" 
             onMouseEnter={() => {
-                setState(true)
+                toggleCategory(true)
                 all()
             }}
-            onMouseLeave={() => setState(false)}
+            onMouseLeave={() => {
+                toggleCategory(false)
+                setShowSubCategory(false)
+            }}
         >
             <button 
                 className="nav-menu">
@@ -42,23 +52,35 @@ const Categories = () => {
             >
                 <div 
                     className="child-menu"
-                    style={{ display: state ? 'flex' : 'none' }}
+                    style={{ display: showCategory ? 'flex' : 'none' }}
                 >
                     <ul>
                         {
                             categories.map(category => (
                                 <li 
+                                    key={category.id}
                                     data-index={category.id}
-                                    onMouseEnter={(e) => setShowSubCategory(true)}
-                                    onMouseLeave={(e) => setShowSubCategory(false)}
+                                    onMouseEnter={(e) => {
+                                        setShowSubCategory(true)
+                                        setSubCategoryParent(category.id)
+                                    }}
                                 >
-                                    {category.title}
+                                    <a 
+                                        className="nav-menu px-4 py-2 flex flex-row items-center justify-between" 
+                                        href={category.url}
+                                    >
+                                        {category.title}
+
+                                        <svg className="h-3 w-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                          <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
+                                        </svg>
+                                    </a>
                                 </li>
                             ))
                         }
                     </ul>
                 </div>
-                { showSubCategory ? <SubCategories /> : null }
+                { <SubCategory show={showSubCategory} parent={subCategoryParent} /> }
             </div>
         </nav>
     )
