@@ -29,5 +29,9 @@ body{
 }
 
 .btn.primary{
-    @apply bg-primary text-white;
+    @apply bg-primary text-white hover:bg-neutral;
+}
+
+.btn.lg{
+    @apply w-full w-40 px-1 py-4;
 }

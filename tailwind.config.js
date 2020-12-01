@@ -5,7 +5,8 @@ module.exports = {
     extend: {
       backgroundColor: {
         'ud-gray': '#FBFBF8',
-        primary: '#0F7C90'
+        primary: '#0F7C90',
+        neutral: '#3c3b37'
       },
       textColor:{
         primary: '#0F7C90',
