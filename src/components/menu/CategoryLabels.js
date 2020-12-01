@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import CategoryProvider from '../../services/Categories';
+import LoadingList from '../state/loadingList';
 
 const CategoryLabel = ({show, parent}) => {
     const [labels, setLabels] = useState([]);
@@ -43,6 +44,9 @@ const CategoryLabel = ({show, parent}) => {
                         </li>
                     ))
                 }
+
+                { labels.length == 0 ? <LoadingList /> : null }
+
             </ul>
         </div>
     )

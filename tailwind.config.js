@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundColor: {
-        gray: '#FBFBF8',
+        'ud-gray': '#FBFBF8',
         primary: '#0F7C90'
       },
       textColor:{

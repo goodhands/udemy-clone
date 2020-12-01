@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const useMenu = (label, defaultState) => {
+const useHover = (label, defaultState) => {
     const [state, setState] = useState(defaultState);
     const Menu = ({children}) => (
         <nav 
@@ -9,12 +9,12 @@ const useMenu = (label, defaultState) => {
             onMouseLeave={() => setState(false)}
         >
             <button 
-                onMouseEnter={() => setState(true)}
                 className="nav-menu" 
             >
                 {label}    
             </button>
             <div 
+                className="absolute flex flex-row justify-between left-0 top-full"
                 style={{ display: state ? 'block' : 'none' }} 
             >
                 { children }
@@ -25,4 +25,4 @@ const useMenu = (label, defaultState) => {
     return [state, Menu, setState];
 }
 
-export default useMenu;
+export default useHover;
