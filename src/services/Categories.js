@@ -17,8 +17,8 @@ const CategoryProvider = {
         return categories;
     },
 
-    all(){
-        return axios.get('/course-categories');
+    findLabels(parent){
+        return axios.get(`/course-subcategories/${parent}/labels/`);
     },
 
     async findChildren(parentId){

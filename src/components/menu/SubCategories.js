@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import CategoryLabels from '../menu/CategoryLabels';
 import CategoryProvider from '../../services/Categories';
 
 const SubCategories = ({show, data}) => {
 
     const [categories, setCategories] = useState([]);
+    const [showChild, toggleChild] = useState(false);
+    const [labelParent, setLabelParent] = useState("");
 
     useEffect( () => {
         setCategories([]);
@@ -12,18 +15,25 @@ const SubCategories = ({show, data}) => {
     }, [data])
 
     return (
-        <div 
-            style={{ display: show ? 'flex' : 'none' }}
-            className="flex flex-row justify-between left-0 top-full"
-        >
-            <div className="child-menu">
+        <div className="flex flex-1">
+            <div 
+                style={{ display: show ? 'flex' : 'none' }}
+                className="child-menu flex flex-row justify-between left-0 top-full"            
+            >
                 <ul>
                     {categories.map(category => (
                         category.children.map(children => (
-                            <li key={children.id}>
+                            <li 
+                                key={children.id}>
                                 <a 
                                     className="nav-menu px-4 py-2 flex flex-row items-center justify-between" 
-                                    href={children.url}>
+                                    href={children.url}
+                                    onMouseEnter={() => {
+                                        toggleChild(true)
+                                        setLabelParent(children)
+                                    }}
+                                    onMouseLeave={() => toggleChild(false)}
+                                >
                                     {children.title}
 
                                     <svg className="h-3 w-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
@@ -35,12 +45,8 @@ const SubCategories = ({show, data}) => {
                     ))}
                 </ul>
             </div>
-            <div className="child-menu">
-                <ul>
-                    <li>Development</li>
-                    <li>Business</li>
-                </ul>
-            </div>
+
+            <CategoryLabels show={showChild} parent={labelParent}/>
         </div>
     )
 }
