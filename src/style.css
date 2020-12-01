@@ -35,3 +35,8 @@ body{
 .btn.lg{
     @apply w-full w-40 px-1 py-4;
 }
+
+.home-bg-teaser{
+    background-image: url('https://img-a.udemycdn.com/notices/featured_banner/image_udlite/71b6440d-552d-4088-9dfc-e4ebd28c3302.jpg');
+    background-repeat: no-repeat;
+}
