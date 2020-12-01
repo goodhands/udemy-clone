@@ -14,7 +14,7 @@ const useHover = (label, defaultState) => {
                 {label}    
             </button>
             <div 
-                className="absolute flex flex-row justify-between left-0 top-full"
+                className="absolute flex flex-row justify-between right-0 top-full"
                 style={{ display: state ? 'block' : 'none' }} 
             >
                 { children }

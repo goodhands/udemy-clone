@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import useHover from './hooks/useHover';
 import Button from './components/button/Button';
 import Categories from './components/menu/Categories';
+import Search from './components/menu/Search';
 
 const cartIcon = <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
@@ -19,12 +20,7 @@ const Nav = () => {
 
                 <Categories/>
 
-                <input
-                    type="text"
-                    className={`bg-ud-gray border border-gray-400 h-12 outline-none px-5 rounded-full w-6/12`}
-                    placeholder="Search for anything"
-                    //TODO: Add magnifier image
-                />
+                <Search />
 
                 <BusinessMenu className="w-full p-4 bg-white border">
                     <div className="bg-white border flex flex-col items-center justify-center p-3 space-y-4 w-72">
@@ -53,7 +49,7 @@ const Nav = () => {
             </div>
 
             <div className="buttons flex justify-end space-x-3 w-2/12">
-                <a href="" className="btn default w-24 h-10">Log in</a>
+                <a href="" className="btn default w-24 h-10 hover:border-black">Log in</a>
                 <a href="" className="btn primary w-24 h-10 hover:bg-neutral">Sign up</a>
             </div>
         </nav>
