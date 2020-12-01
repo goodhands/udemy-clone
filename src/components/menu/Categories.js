@@ -9,33 +9,23 @@ const Categories = () => {
     const [showSubCategory, setShowSubCategory] = useState(false);
     const [subCategoryParent, setSubCategoryParent] = useState([]);
 
-    /**
-     * Thinking whether to load on categories after component
-     * renders instead of each onMouseEnter event
-     */
-    // useEffect( () => {
-    //     setCategories([]);
-
-    //     CategoriesService.all(({categories}) => {
-    //         setCategories(categories);
-    //     }, console.error);
-
-    // }, [setCategories, categories]);
-
-    async function all(){
-        if(categories.length > 0 ) return;
-
-        CategoryProvider.all().then(({ data }) => {
-            setCategories(() => data.results || []);
+    useEffect( () => {
+        CategoryProvider.catChildren().then(response => {
+            setCategories(() => response || []);
         }, console.error);
-    } 
+    }, []);
+
+    function subCategoryData(){
+        return categories.filter((data) => {
+            return data.id == subCategoryParent;
+        })
+    }
 
     return (
         <nav 
             className="flex h-full items-center relative" 
             onMouseEnter={() => {
                 toggleCategory(true)
-                all()
             }}
             onMouseLeave={() => {
                 toggleCategory(false)
@@ -80,7 +70,7 @@ const Categories = () => {
                         }
                     </ul>
                 </div>
-                { <SubCategory show={showSubCategory} parent={subCategoryParent} /> }
+                { <SubCategory show={showSubCategory} data={subCategoryData()} /> }
             </div>
         </nav>
     )
