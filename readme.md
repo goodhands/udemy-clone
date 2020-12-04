@@ -23,4 +23,4 @@ This project's setup was inspired by Brian Holt's course on [React v5 at Fronten
 Contributions are welcomed! It's always fun learning together so please feel free to fork the repo and send in your PR. Also read the contribution guide for a little update on how to make your contributions!
 
 ### Developer
-This project was developed by [Samuel Olaegbe](mailto:olaegbesamuel@gmail.com). Twitter [@devloader](https://twitter.com/devloader)
+This project was developed by [Samuel Olaegbe](mailto:olaegbesamuel@gmail.com). Twitter [@devloader](https://twitter.com/devloader). Give the repo a star ⭐ to increase visibility :)
