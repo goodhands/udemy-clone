@@ -1,5 +1,5 @@
 import React from 'react';
-import Tab from '../components/Tab';
+import Tab from '../components/course/Tab';
 
 const Home = () => {
     return (
@@ -20,7 +20,7 @@ const Home = () => {
                 <p className="text-neutral text-base">
                     Choose from 130,000 online video courses with new additions published every month
                 </p>
-                <Tab tabs={[{title: 'Excel', id: '001'}, {title: 'Python', id: '002'}]} />
+                <Tab tabs={[{title: 'Excel', id: '6730'}, {title: 'Python', id: '002'}]} />
             </div>
         </section>
     )

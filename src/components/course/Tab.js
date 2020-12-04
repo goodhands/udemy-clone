@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from 'react';
+import Course from '../../services/Course';
 
 const Tab = ({tabs}) => {
-    const [activeTab, setActiveTab] = useState(0);
+    const [activeTab, setActiveTab] = useState('6730');
     const [courses, setCourses] = useState([]);
 
     useEffect( () => {
         setCourses([]);
         
-        // setCourses(e.target.dataset.index);
+        Course.getCourseByCategory(activeTab).then(({data}) => {
+            setCourses(() => data.unit || []);
+        })
     }, [activeTab])
 
     function handleClick(e){
@@ -40,6 +43,7 @@ const Tab = ({tabs}) => {
                     tabs.map(tab => (
                         <div key={tab.id} style={{ display: activeTab == tab.id ? 'flex' : 'none' }}>
                             {tab.title}
+                            {courses.title}
                         </div>
                     ))
                 }
