@@ -1,5 +1,5 @@
 {
-  "name": "pureflix",
+  "name": "udemy-react-clone",
   "version": "1.0.0",
   "description": "",
   "main": "index.html",
@@ -11,8 +11,24 @@
     "lint": "eslint \"src/**/*.{js, jsx}\" --quiet",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "clone",
+    "udemy",
+    "react",
+    "react-beginner",
+    "create-react-app",
+    "parcel"
+  ],
+  "repository": {
+    "url": "https://github.com/goodhands/udemy-clone",
+    "directory": "/src",
+    "type": "VCS"
+  },
+  "author": {
+    "name": "Samuel Olaegbe",
+    "email": "olaegbesamuel@gmail.com",
+    "url": "http://samuelolaegbe.com"
+  },
   "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^10.0.2",
